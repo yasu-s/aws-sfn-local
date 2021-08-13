@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  sam-local:
+    build:
+      context: .
+      dockerfile: ./docker/sam-local/Dockerfile
+    ports:
+      - 3001:3001
+    working_dir: $PWD
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $PWD:$PWD
+    command: >
+      sam local start-lambda
+        --host 0.0.0.0
+        --container-host host.docker.internal
