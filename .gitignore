@@ -102,3 +102,17 @@ dist
 
 # TernJS port file
 .tern-port
+
+# dotenv environment variables file
+.env
+
+# OSX
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# vscode
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/extensions.json
