@@ -14,3 +14,14 @@ services:
       sam local start-lambda
         --host 0.0.0.0
         --container-host host.docker.internal
+        --docker-network aws-sfn-local_default
+
+  sfn-local:
+    image: amazon/aws-stepfunctions-local:1.7.9
+    ports:
+      - 8083:8083
+    environment:
+      AWS_DEFAULT_REGION: ap-northeast-1
+      AWS_ACCESS_KEY_ID: dummy
+      AWS_SECRET_ACCESS_KEY: dummy
+      LAMBDA_ENDPOINT: http://sam-local:3001

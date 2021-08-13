@@ -24,3 +24,10 @@ docker-compose up
 aws lambda invoke --function-name HelloWorldFunction --endpoint http://127.0.0.1:3001/ output.txt
 
 ```
+
+## Tips
+
+### working_dirに$PWDを指定している理由
+
+- SAM CLIのバージョンが1.27.2時点、DockerコンテナでSAM CLIを起動すると`-docker-volume-basedir`が正しく反映されずLambdaの起動に失敗する。
+- 上記の理由からDockerコンテナもホスト側と同様のディレクトリパスにすることでSAM CLIが起動できるようにした。
