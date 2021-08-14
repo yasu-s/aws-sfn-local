@@ -117,4 +117,7 @@ dist
 !.vscode/settings.json
 !.vscode/extensions.json
 
+# SAM CLI
+.aws-sam
+
 output.txt
