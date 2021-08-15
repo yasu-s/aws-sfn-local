@@ -14,7 +14,6 @@ services:
       sam local start-lambda
         --host 0.0.0.0
         --container-host host.docker.internal
-        --docker-network aws-sfn-local_default
 
   sfn-local:
     image: amazon/aws-stepfunctions-local:1.7.9
