@@ -17,11 +17,12 @@ services:
         --docker-network aws-sfn-local_default
 
   sfn-local:
-    image: amazon/aws-stepfunctions-local:1.7.9
+    image: localstack/localstack
     ports:
-      - 8083:8083
+      - 8083:4566
     environment:
-      AWS_DEFAULT_REGION: ap-northeast-1
-      AWS_ACCESS_KEY_ID: dummy
-      AWS_SECRET_ACCESS_KEY: dummy
-      LAMBDA_ENDPOINT: http://sam-local:3001
+      DEBUG: 1
+      DATA_DIR: /tmp/localstack/data
+      SERVICES: stepfunctions
+      DEFAULT_REGION: ap-northeast-1
+      STEPFUNCTIONS_LAMBDA_ENDPOINT: http://sam-local:3001

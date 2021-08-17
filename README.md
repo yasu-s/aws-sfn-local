@@ -27,7 +27,7 @@ aws lambda invoke --function-name HelloWorldFunction --endpoint http://127.0.0.1
 aws stepfunctions --endpoint http://localhost:8083 create-state-machine --name "HelloWorld" --role-arn "arn:aws:iam::012345678901:role/DummyRole" --definition file://./statemachine/sfn.asl.json
 
 # Docker内のStepFunctions実行
-aws stepfunctions --endpoint http://localhost:8083 start-execution --state-machine arn:aws:states:ap-northeast-1:123456789012:stateMachine:HelloWorld --name test
+aws stepfunctions --endpoint http://localhost:8083 start-execution --state-machine arn:aws:states:ap-northeast-1:000000000000:stateMachine:HelloWorld
 ```
 
 ## Tips
