@@ -23,6 +23,8 @@ services:
     environment:
       DEBUG: 1
       DATA_DIR: /tmp/localstack/data
-      SERVICES: stepfunctions
+      SERVICES: ssm,stepfunctions
       DEFAULT_REGION: ap-northeast-1
       STEPFUNCTIONS_LAMBDA_ENDPOINT: http://sam-local:3001
+    volumes:
+      - ./docker/localstack/initaws:/docker-entrypoint-initaws.d
